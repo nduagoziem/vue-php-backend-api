@@ -6,11 +6,18 @@ use mysqli;
 
 class Database
 {
-    private $host = "localhost";
-    private $dbname = "xoftpay_invoice";
-    private $username = "nduagoziem";
-    private $password = "1234567890";
-    public $connection;
+    private $host;
+    private $dbname;
+    private $username;
+    private $password;
+    private $connection;
+
+    public function __construct($host, $dbname, $username, $password) {
+        $this-> host = $host;
+        $this-> dbname = $dbname;
+        $this-> username = $username;
+        $this-> password = $password;
+    }
 
     public function connect()
     {

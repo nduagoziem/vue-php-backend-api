@@ -11,7 +11,8 @@ use Controllers\AuthController;
 
 AuthHeaders::setHeaders();
 
-$database = new Database();
+$database = new Database("localhost", "xoftpay_invoice", "nduagoziem", "1234567890"); // Xampp user connection params
+$conn = $database->connect();
 $conn = $database->connect();
 $userModel = new UserModel($conn);
 $authController = new AuthController($userModel);
